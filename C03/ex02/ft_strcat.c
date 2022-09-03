@@ -17,6 +17,7 @@ char *ft_strcat(char *dest, char *src)
         i++;
         j++;
     }
+    dest[i] = '\0';
     return (dest);
 }
 
@@ -24,7 +25,7 @@ int main()
 {
     char dest[10] = "hamza ";
     char src[5] = "nait";
-
+    ft_strcat(dest, src);
 
     printf("dest = %s\nsrc = %s\n", dest, src);
     return (0);
