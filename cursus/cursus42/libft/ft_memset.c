@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 04:50:03 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/12 00:26:01 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/14 12:41:20 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,4 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return (b);
-}
-
-
-int main ()
-{
-	char s[20] = "hamza nait";
-	printf("%s\n", ft_memset(s, '0', -2));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 04:58:18 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/13 16:56:39 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/14 12:42:38 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,4 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	}
 	return (r);
-}
-
-int main()
-{
-	char s[10] = "hamzanai";
-	printf ("%s\n", ft_strrchr(s, 'a'));
 }
