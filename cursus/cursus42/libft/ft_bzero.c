@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 17:13:05 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/12 17:13:05 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/09 02:00:22 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/12 02:08:37 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	char	*ss;
 	size_t	i;
+	char	*ss;
 
+	ss = s;
 	i = 0;
-	ss = (char *) malloc (sizeof (char) * len);
-	while(i < len)
+	while (i < n)
 	{
-		ss[i] = s[start];
+		printf("ss[%zu] ==> %c\n", i, ss[i]);
+		ss[i] = 0;
 		i++;
-		start++;
 	}
-	return (ss);
-}
-
-int main ()
-{
-	char s[10] = "hamza nai";
-
-	printf ("%s\n", ft_substr(s, 3, 3));
 }

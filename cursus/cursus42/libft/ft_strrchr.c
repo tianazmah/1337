@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 16:31:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/12 16:31:55 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/10 04:58:18 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/13 16:56:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
 
-char *strdup(const char *s)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	char *ss;
+	int		i;
+	char	*p;
+	char	*r;
 
-	i = 1;
-	while (s[i] != 0)
-	{
-		i++;
-	}
-	ss = (char *) malloc (sizeof(char *) * i);
-	if (!ss)
-		return (0);
+	p = (char *)s;
 	i = 0;
-	while(s[i] != 0)
+	r = 0;
+	if (c == 0)
 	{
-		ss[i] = s[i];
+		while (p[i] != '\0')
+			i++;
+		return (&p[i]);
+	}
+	while (p[i] != '\0')
+	{
+		if (p[i] == c)
+			r = &p[i];
 		i++;
 	}
-	ss[i] = 0;
-	return (ss);
+	return (r);
 }
 
 int main()
 {
-	char *s = "hamza\0";
-
-	printf ("%s\n", strdup(s));
-	return 0;
+	char s[10] = "hamzanai";
+	printf ("%s\n", ft_strrchr(s, 'a'));
 }
