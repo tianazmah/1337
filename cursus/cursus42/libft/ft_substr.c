@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/12 17:13:05 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/12 22:21:36 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*ss;
+	size_t	i;
 
-	ss = (char *)s;
 	i = 0;
-	while (i < n)
+	ss = (char *) malloc (sizeof (char) * len);
+	while (i < len)
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
+		ss[i] = s[start];
 		i++;
+		start++;
 	}
-	return (0);
+	return (ss);
+}
+
+int main ()
+{
+	char s[10] = "hamza nai";
+
+	printf ("%s\n", ft_substr(s, 3, 3));
 }

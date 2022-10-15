@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/10 00:48:15 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/11 04:25:31 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	strlcat(char *restrict dst, const char *restrict src,size_t dstsize)
 {
 	size_t	i;
-	char	*ss;
+	size_t	j;
 
-	ss = (char *)s;
+	j = 0;
 	i = 0;
-	while (i < n)
+	while (dst[j] != 0)
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
-		i++;
+		j++;
 	}
-	return (0);
+	while (src[i] != 0 && i < dstsize)
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (i);
 }

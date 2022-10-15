@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/09 02:00:22 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/12 02:08:37 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*ss;
 
-	ss = (char *)s;
+	ss = s;
 	i = 0;
 	while (i < n)
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
+		printf("ss[%zu] ==> %c\n", i, ss[i]);
+		ss[i] = 0;
 		i++;
 	}
-	return (0);
 }

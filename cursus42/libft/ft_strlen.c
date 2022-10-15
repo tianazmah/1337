@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/07 11:33:28 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/07 13:26:46 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlen(char *s)
 {
-	size_t	i;
-	char	*ss;
+	size_t	len;
 
-	ss = (char *)s;
-	i = 0;
-	while (i < n)
+	len = 0;
+	while (*s)
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
-		i++;
+		len++;
+		s++;
 	}
-	return (0);
+	return (len);
 }

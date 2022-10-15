@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/09 04:15:16 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/11 04:26:43 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	size_t	i;
-	char	*ss;
+	char	*s;
+	char	*t;
 
-	ss = (char *)s;
 	i = 0;
+	t = (char *) src;
+	s = (char *) dst;
 	while (i < n)
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
+		s[i] = t[i];
 		i++;
 	}
-	return (0);
+	return (dst);
 }

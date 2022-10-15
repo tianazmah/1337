@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnait <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 14:46:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/15 16:42:59 by marvin           ###   ########.fr       */
+/*   Created: 2022/10/10 01:53:40 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/10 02:33:07 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	char	*ss;
-
-	ss = (char *)s;
-	i = 0;
-	while (i < n)
+	if (c >= 'A' && c <= 'Z')
 	{
-		if (ss[i] == c)
-		{
-			return (&ss[i]);
-		}
-		i++;
+		return (c + 32);
 	}
-	return (0);
+	return (c);
 }
