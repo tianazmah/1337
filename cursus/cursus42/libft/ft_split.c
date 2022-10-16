@@ -22,7 +22,7 @@ int sslen(char const *s, char c)
 	return (len);
 }
 
-char **ft_split(char *s, char c)
+char **ft_split(char const *s, char c)
 {
 	char	**ss;
 	int		len;

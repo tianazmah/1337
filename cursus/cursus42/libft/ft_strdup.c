@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strdup.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:31:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/12 22:04:58 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/16 16:58:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char *strdup(const char *s)
+char *ft_strdup(const char *s)
 {
 	int	i;
 	char *ss;
@@ -33,12 +33,4 @@ char *strdup(const char *s)
 	}
 	ss[i] = 0;
 	return (ss);
-}
-
-int main()
-{
-	char *s = "hamza\0";
-
-	printf ("%s\n", strdup(s));
-	return 0;
 }
