@@ -6,14 +6,14 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:20:13 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/11 04:26:55 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/17 22:25:21 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // make sure 127 does not count as printable (man isprint)
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 176)
+	if (c >= 32 && c <= 127)
 	{
 		return (1);
 	}
