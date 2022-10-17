@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 02:31:51 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/14 12:53:50 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/17 21:22:31 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 size_t	ft_strlen(char *s);
 int		ft_atoi(const char *str);
-char 	*ft_strdup(const char *s);
+char	*ft_strdup(const char *s);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
