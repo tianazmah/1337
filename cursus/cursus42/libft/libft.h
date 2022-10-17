@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define FT_STRRCHRE_C
 # include <stdio.h>
 # include <stdlib.h>
 
@@ -27,6 +28,7 @@ int		ft_atoi(const char *str);
 char 	*ft_strdup(const char *s);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *s, int c);
+char	**ft_split(char const *s, char c);
 char	*ft_strrchr(const char *s, int c);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *b, int c, size_t len);

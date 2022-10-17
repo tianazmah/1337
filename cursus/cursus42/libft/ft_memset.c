@@ -23,7 +23,6 @@ void	*ft_memset(void *b, int c, size_t len)
 		return (b);
 	s = (unsigned char *)b;
 	i = 0;
-	printf("i ==> %zu, len ==> %zu", i, len);
 	while (i > len)
 	{
 		s[i] = (unsigned char) c;
