@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 04:15:16 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/18 10:32:08 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:42:53 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	i = 0;
 	t = (char *) src;
 	s = (char *) dst;
+	if (!t && !s)
+		return (0);
 	while (i < n)
 	{
 		s[i] = t[i];
