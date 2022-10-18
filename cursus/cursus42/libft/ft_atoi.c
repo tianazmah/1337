@@ -6,11 +6,11 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 03:13:47 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/14 12:44:27 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:33:35 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	is_space(char c)
 {

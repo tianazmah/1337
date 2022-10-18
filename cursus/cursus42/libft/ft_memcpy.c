@@ -6,11 +6,11 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 04:15:16 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/11 04:26:43 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:32:08 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {

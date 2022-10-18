@@ -6,14 +6,15 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:20:13 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/17 22:25:21 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 10:32:39 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// make sure 127 does not count as printable (man isprint)
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c <= 126)
 	{
 		return (1);
 	}
