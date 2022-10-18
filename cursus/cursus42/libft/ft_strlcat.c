@@ -6,13 +6,13 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:48:15 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/18 10:31:33 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 19:45:09 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcat(char *restrict dst, const char *restrict src,size_t dstsize)
+size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;

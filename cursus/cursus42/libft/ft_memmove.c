@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 05:08:27 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/18 10:31:59 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/18 20:06:10 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,33 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
 	char	*s;
 	char	*d;
-
-	i = len;
+	
 	s = (char *) src;
 	d = (char *) dst;
-	while (i > 0)
+	
+	if (s < d)
 	{
-		d[i] = s[i];
-		i--;
+		while (len-- > 0)
+			d[len] = s[len];
 	}
+	else
+		ft_memcpy(d,s,len);
 	return (dst);
 }
+
+// int main()
+// {
+// 	char *src = "this is a good nyancat !|\r|\n";
+// 	char dst1[100];
+// 	char dst2[100];
+
+// 	printf("________________\n|");
+// 	printf("%zu\n", ft_strlen(src));
+// 	//printf("%s", ft_memmove(dst1, src, ft_strlen(src)));
+// 	printf("\n_____________\n");
+// 	printf("%s", memmove(dst2, src, ft_strlen(src)));
+// 	printf("\n|________________");
+
+// }
