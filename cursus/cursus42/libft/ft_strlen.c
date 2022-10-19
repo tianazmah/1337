@@ -6,13 +6,13 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:33:28 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/14 12:40:42 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/19 14:04:53 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
