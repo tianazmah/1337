@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 16:31:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 21:21:50 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/20 16:20:54 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s)
 	{
 		i++;
 	}
-	ss = (char *) malloc (sizeof(char *) * i);
+	ss = (char *) malloc (sizeof(char) * i + 1);
 	if (!ss)
 		return (0);
 	i = 0;

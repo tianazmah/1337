@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 02:31:51 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/20 14:35:57 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/20 16:53:15 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src,
+size_t	ft_strlcat(char *dst, const char *src,
 			size_t dstsize);
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src,
+size_t	ft_strlcpy(char *dst, const char *src,
 			size_t dstsize);
 
 #endif
