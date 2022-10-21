@@ -31,7 +31,8 @@ ft_strlcat.c\
 ft_strtrim.c\
 ft_substr.c\
 ft_tolower.c\
-ft_toupper.c
+ft_toupper.c\
+ft_strmapi.c
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
