@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:33:36 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/17 21:38:00 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/21 15:49:43 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (0);
 	ss = (char **) malloc (sizeof(char *) * sslen(s, c) + 1);
+	if (!ss)
+		return (0);
 	while (s[j] != 0)
 	{
 		if (s[j] == c)
@@ -51,10 +55,8 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			k = j;
-			while (s[j] != c)
-			{
+			while (s[j] != c && s[j])
 				j++;
-			}
 			ss[i++] = ft_substr(s, k, j - k);
 		}
 	}
@@ -62,15 +64,15 @@ char	**ft_split(char const *s, char c)
 	return (ss);
 }
 
-// int main ()
-// {
-// 	char s[100] = "  hamza   is here to stay ";
-// 	char **ss;
+int main ()
+{
+	char s[100] = "                  olol";
+	char **ss;
 
-// 	ss = ft_split(s, ' ');
-// 	while (*ss)
-// 	{
-// 		printf("|%s|\n", *ss);
-// 		ss++;
-// 	}
-// }
+	ss = ft_split(s, ' ');
+	while (*ss)
+	{
+		printf("|%s|\n", *ss);
+		ss++;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:17:16 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/17 22:31:43 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/21 15:52:18 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int	nlen(int n)
 	int		len;
 
 	len = 0;
+	if (n == 0)
+	{
+		return (1);
+	}
 	while (n > 0)
 	{
 		n = n / 10;
@@ -36,16 +40,20 @@ char	*ft_itoa(int n)
 	{
 		len = nlen (-(n / 10)) + 2;
 		s = (char *) malloc (sizeof(char) * len + 1);
+		if (!s)
+			return (0);
 		s[0] = '-';
 		n *= -1;
 	}
 	else
 	{
 		s = (char *) malloc (sizeof(char) * (len = nlen(n)) + 1);
+		if (!s)
+			return (0);
 	}
-	if (!s)
-		return (0);
 	s[len] = 0;
+	if (n == 0)
+		s[0] = '0';
 	while (len >= 0 && n > 0)
 	{
 		s[--len] = n % 10 + '0';
@@ -56,5 +64,5 @@ char	*ft_itoa(int n)
 
 // int main()
 // {
-// 	printf("%s\n", ft_itoa(4562));
+// 	printf("|%s|\n", ft_itoa(-623));
 // }
