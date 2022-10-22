@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 03:13:47 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/20 19:13:59 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/22 20:03:24 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ int	ft_atoi(const char *str)
 	signe = 1;
 	while (is_space(*str))
 		str++;
-	while (*str == '-' || *str == '+')
+	if (*str == '-' || *str == '+')
 	{
 		if (*str++ == '-')
-		{
 			signe *= -1;
-		}
 	}
 	while (ft_isdigit(*str))
 	{
