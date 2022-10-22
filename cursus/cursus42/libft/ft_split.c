@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:33:36 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/21 15:49:43 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/22 19:42:05 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ int	sslen(char const *s, char c)
 	return (len);
 }
 
+int	not_in_s(const char *s, int j, char c)
+{
+	while (s[j] != c && s[j])
+		j++;
+	return (j);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**ss;
@@ -55,8 +62,7 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			k = j;
-			while (s[j] != c && s[j])
-				j++;
+			j = not_in_s(s, j, c);
 			ss[i++] = ft_substr(s, k, j - k);
 		}
 	}
@@ -64,15 +70,15 @@ char	**ft_split(char const *s, char c)
 	return (ss);
 }
 
-int main ()
-{
-	char s[100] = "                  olol";
-	char **ss;
+// int main ()
+// {
+// 	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak";
+// 	char **ss;
 
-	ss = ft_split(s, ' ');
-	while (*ss)
-	{
-		printf("|%s|\n", *ss);
-		ss++;
-	}
-}
+// 	ss = ft_split(s, ' ');
+// 	while (*ss)
+// 	{
+// 		printf("|%s|\n", *ss);
+// 		ss++;
+// 	}
+// }
