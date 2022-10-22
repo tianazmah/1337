@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 05:08:27 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/18 20:06:10 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/22 13:31:23 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*s;
 	char	*d;
-	
+
 	s = (char *) src;
 	d = (char *) dst;
-	
 	if (s < d)
 	{
 		while (len-- > 0)
 			d[len] = s[len];
 	}
 	else
-		ft_memcpy(d,s,len);
+		ft_memcpy(d, s, len);
 	return (dst);
 }
 
