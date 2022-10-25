@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 05:35:30 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/25 10:55:27 by hnait            ###   ########.fr       */
+/*   Created: 2022/10/23 13:22:42 by hnait             #+#    #+#             */
+/*   Updated: 2022/10/24 15:29:10 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	if (dstsize <= 0)
-	{
-		return (ft_strlen((char *) src));
+	t_list	*node;
+	if (!new)
+		return ;
+	if (lst)
+	{	
+		node = *lst;
+		if (node)
+		{
+			while (node->next)
+				node = node->next;
+			node->next = new;
+		}
+		else
+			*lst = new;
 	}
-	while (i < dstsize - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen((char *) src));
 }

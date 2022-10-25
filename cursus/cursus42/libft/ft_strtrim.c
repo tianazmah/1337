@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 22:28:02 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/22 22:24:01 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/24 11:30:05 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[i]))
 	{
 		if (i == s1_len)
-			return ("\0");
+			return (ft_strdup("\0"));
 		i++;
 	}
 	while (ft_strchr(set, s1[j]))

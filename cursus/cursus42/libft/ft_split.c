@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:33:36 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/22 19:42:05 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/25 13:53:03 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,9 @@ char	**ft_split(char const *s, char c)
 	return (ss);
 }
 
-// int main ()
-// {
-// 	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak";
-// 	char **ss;
+int main ()
+{
+	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak";
 
-// 	ss = ft_split(s, ' ');
-// 	while (*ss)
-// 	{
-// 		printf("|%s|\n", *ss);
-// 		ss++;
-// 	}
-// }
+	ft_split(s, ' ');
+}
