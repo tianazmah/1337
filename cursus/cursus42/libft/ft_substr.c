@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:13:05 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/25 13:58:25 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/26 09:09:19 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ss;
 	size_t	i;
-	char *rtr;
+	char	*rtr;
+
 	if (!s)
 		return (0);
 	i = 0;
@@ -30,20 +31,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	ss[i] = '\0';
-	rtr = "ok";
-	ss = rtr;
-	system("leaks a.out");
-	return (rtr);
+	// system("leaks a.out");
+	return (ss);
 }
 
-int main ()
-{
-	char *str = "i just want this part #############";
-	size_t size = 22;
-
-	char *ret = ft_substr(str, 0, 69688);
-	
-	printf("|%s|\n", ret);
-
-
-}
+// int main ()
+// {
+// 	char *str = "i just want this part #############";
+// 	size_t size = 22;
+// 	char *ret = ft_substr(str, 0, 69688);
+// 	printf("|%s|\n", ret);
+// }

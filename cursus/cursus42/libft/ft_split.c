@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:33:36 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/25 13:53:03 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/26 09:45:04 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,42 @@ int	sslen(char const *s, char c)
 	while (*s)
 	{
 		if (*s == c)
-		{
 			i++;
-		}
 		else
-		{
 			len++;
-		}
 		s++;
 	}
 	return (len);
 }
 
-int	not_in_s(const char *s, int j, char c)
+void	free_ss(char **ss)
+{
+	{
+		while (*ss)
+		{
+			free(*ss);
+			ss++;
+		}
+	}
+}
+
+int	next_sep(const char *s, int j, char c)
 {
 	while (s[j] != c && s[j])
 		j++;
 	return (j);
+}
+
+int	cut_word(const char *s, int j, char **ss, char c)
+{
+	*ss = ft_substr(s, j, next_sep(s, j, c) - j);
+	if (ss--)
+		printf ("%s\n", *ss--);
+	else
+		printf ("%s\n", *ss);
+	if (!(*ss))
+		free_ss(ss);
+	return (next_sep(s, j, c));
 }
 
 char	**ft_split(char const *s, char c)
@@ -46,7 +65,6 @@ char	**ft_split(char const *s, char c)
 	char	**ss;
 	int		i;
 	int		j;
-	int		k;
 
 	i = 0;
 	j = 0;
@@ -60,11 +78,7 @@ char	**ft_split(char const *s, char c)
 		if (s[j] == c)
 			j++;
 		else
-		{
-			k = j;
-			j = not_in_s(s, j, c);
-			ss[i++] = ft_substr(s, k, j - k);
-		}
+			j = cut_word(s, j, &ss[i], c);
 	}
 	ss[i] = 0;
 	return (ss);
@@ -72,7 +86,12 @@ char	**ft_split(char const *s, char c)
 
 int main ()
 {
-	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak";
-
-	ft_split(s, ' ');
+	char **ss;
+	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak ";
+	ss = ft_split(s, ' ');
+	while (*ss)
+	{
+		printf("|%s|\n", *ss);
+		ss++;
+	}
 }

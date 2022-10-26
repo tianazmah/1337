@@ -6,7 +6,7 @@
 /*   By: hnait <hnait@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:03:37 by hnait             #+#    #+#             */
-/*   Updated: 2022/10/24 14:56:39 by hnait            ###   ########.fr       */
+/*   Updated: 2022/10/25 19:34:13 by hnait            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		}
 		ft_lstadd_back(&new_list, node);
 		lst = lst->next;
-	}  
+	}
 	return (new_list);
 }
