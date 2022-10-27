@@ -52,11 +52,11 @@ int	ft_atoi(const char *str)
 	return (nbr);
 }
 
-// int main ()
-// {
-// 	char *n = "-085";
-// 	int i1 = atoi(n);
-// 	int i2 = ft_atoi(n);
-// 	printf ("| %d |\n", i1);
-// 	printf ("| %d |\n", i2);
-// }
+int main ()
+{
+	char *n = "2147483649";
+	int i1 = atoi(n);
+	int i2 = ft_atoi(n);
+	printf ("| %d |\n", i1);
+	printf ("| %d |\n", i2);
+}

@@ -48,16 +48,17 @@ int	next_sep(const char *s, int j, char c)
 	return (j);
 }
 
-int	cut_word(const char *s, int j, char **ss, char c)
+char	*cut_word(const char *s, int *j, char c)
 {
-	*ss = ft_substr(s, j, next_sep(s, j, c) - j);
-	if (ss--)
-		printf ("%s\n", *ss--);
-	else
-		printf ("%s\n", *ss);
-	if (!(*ss))
-		free_ss(ss);
-	return (next_sep(s, j, c));
+	char 	*word;
+	int		next;
+
+	next = next_sep(s, *j, c);
+	word = ft_substr(s, *j, next - *j);
+	*j = next;
+	if (!(word))
+		return(0);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
@@ -65,7 +66,7 @@ char	**ft_split(char const *s, char c)
 	char	**ss;
 	int		i;
 	int		j;
-
+ 
 	i = 0;
 	j = 0;
 	if (!s)
@@ -78,20 +79,25 @@ char	**ft_split(char const *s, char c)
 		if (s[j] == c)
 			j++;
 		else
-			j = cut_word(s, j, &ss[i], c);
+		{
+			ss[i] = cut_word(s, &j, c);
+			if (!ss[i])
+				free_ss(ss);
+			i++;
+		}
 	}
 	ss[i] = 0;
 	return (ss);
 }
 
-int main ()
-{
-	char **ss;
-	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak ";
-	ss = ft_split(s, ' ');
-	while (*ss)
-	{
-		printf("|%s|\n", *ss);
-		ss++;
-	}
-}
+// int main ()
+// {
+// 	char **ss;
+// 	char s[100] = "                  olol lkjsdf lskdfjlakdjf skadjfl sfj ak ";
+// 	ss = ft_split(s, ' ');
+// 	while (*ss)
+// 	{
+// 		printf("|%s|\n", *ss);
+// 		ss++;
+// 	}
+// }

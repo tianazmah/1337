@@ -17,7 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ss;
 	size_t	i;
-	char	*rtr;
 
 	if (!s)
 		return (0);
@@ -39,6 +38,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 // 	char *str = "i just want this part #############";
 // 	size_t size = 22;
-// 	char *ret = ft_substr(str, 0, 69688);
+// 	char *ret = ft_substr(str, 0, size);
 // 	printf("|%s|\n", ret);
 // }
