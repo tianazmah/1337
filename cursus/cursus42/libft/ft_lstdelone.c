@@ -16,6 +16,24 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
 		return ;
+	lst->next = 0;
 	del(lst->content);
 	free(lst);
+	lst = 0;
+}	
+
+void fre(void *content)
+{
+	content = 0;
+	free(content);
+}
+
+int main()
+{
+	t_list *list = ft_lstnew(ft_strdup("othmane"));
+	ft_lstadd_back(&list, ft_lstnew(ft_strdup("tian")));
+
+	printf("%d\n", ft_lstsize(list));
+	ft_lstdelone(list->next, &fre);
+	printf("%d\n", ft_lstsize(list));
 }
