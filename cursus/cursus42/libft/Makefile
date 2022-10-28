@@ -3,8 +3,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 SRC = ft_atoi.c\
-ft_bzero.c\
-ft_calloc.c\
+ft_bzero\
+ft_calloc\
 ft_isalnum.c\
 ft_isalpha.c\
 ft_isprint.c\
@@ -38,7 +38,7 @@ ft_putchar_fd.c\
 ft_putstr_fd.c\
 ft_putendl_fd.c\
 ft_putnbr_fd.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:=.o)
 
 BNSSRC = ft_lstnew.c\
 ft_lstadd_front.c\
@@ -53,17 +53,17 @@ BNSOBJ = $(BNSSRC:.c=.o)
 $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: %.c 
 		$(CC) $(CFLAGS) -o $@ -c $<
 
 all:  $(NAME)
-bonus: all $(BNSOBJ)J
+bonus: all $(BNSOBJ)
 		ar rc $(NAME) $(BNSOBJ)
 clean:
-		$(RM) $(OBJ) $(BNSOB)
+		$(RM) $(OBJ) $(BNSOBJ)
 fclean: clean
 		$(RM) $(NAME)
 
-re: fclean all
+re: fclean bonus
 
-.PHONY: clean fclean re
+.PHONY: clean bonus fclean re
