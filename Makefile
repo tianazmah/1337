@@ -1,4 +1,5 @@
 NAME = libft.a
+HEAD = libft.h
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
@@ -50,17 +51,20 @@ ft_lstclear.c\
 ft_lstiter.c\
 ft_lstmap.c
 BNSOBJ = $(BNSSRC:.c=.o)
+all:  $(NAME)
+
 $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
 
-%.o: %.c 
+%.o: %.c $(HEAD)
 		$(CC) $(CFLAGS) -o $@ -c $<
 
-all:  $(NAME)
 bonus: all $(BNSOBJ)
 		ar rc $(NAME) $(BNSOBJ)
+
 clean:
 		$(RM) $(OBJ) $(BNSOBJ)
+
 fclean: clean
 		$(RM) $(NAME)
 
